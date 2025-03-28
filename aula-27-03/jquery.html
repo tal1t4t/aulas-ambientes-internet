@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <script src="/jqueries/jquery-1.11.1.js"></script>
+    <script src="/jqueries/jquery.maskedinput.js"></script>
+    <!-- Bibliotecas utilizadas para maáscara de texto(Ex: formatar CPF) -->
+    <title>Usando jQuery</title>
+</head>
+<body>
+    <form>
+        <label for="campoDt">Data:</label>
+        <input type="text" id="campoDt" size="6"> 
+        <br><br>
+
+        <label for="campoCep">CEP:</label>
+        <input type="text" id="campoCep" size="5">
+        <br><br>
+
+        <label for="campoTel">Tel.:&nbsp;</label>
+        <input type="text" id="campoTel" size="9">
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        jQuery(function($){
+            $("#campoDt").mask("99/99/9999");
+            $("#campoCep").mask("99999-999");
+            $("#campoTel").mask("(99)99999-9999");
+        });
+    </script>
+</body>
+</html>
