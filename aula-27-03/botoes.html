@@ -2,10 +2,27 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Botões</title>
 </head>
 <body>
-    
-
+    <form action="mailto:talitatoledo3@gmail.com" method="post" enctype="text/plain">
+        <h1>Formulário</h1>
+        Nome:
+        <input type="text" name="varnome" size="30" maxlength="100" required>
+        <br><br>
+        Email:
+        <input type="email" name="varemail" size="25" maxlength="100" value="@">
+        <br><br>
+        Idade:
+        <input type="number" name="varidade" min="18" max="100">
+        <br><br>
+        <input type="checkbox" name="receber_info" checked>
+        Desejo receber novidades deste site em meu e-mail.
+        <br><br>
+        <input type="submit" value="Enviar Formulário">
+        <br><br>
+        <input type="reset" value="Apagar tudo">
+        <!-- inputs do tipo reset restauram as informações de um formulário para o seu estado inicial quando são acionados-->
+    </form>
 </body>
 </html>

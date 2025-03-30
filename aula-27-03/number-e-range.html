@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Inputs number</title>
+</head>
+<body>
+    <form>
+        <h3>Informe um valor em centímetros</h3>
+        <input type="number" name="valuex" value="12.4" step="0.2" min="0" max="20">
+        <!--o step define de 'quanto em quanto' eu aumento ou diminuo o valor. -->
+
+        <p style="color:green; font-size: 20px;">
+            <marquee behavior="alternate" direction="right" scrollamount=1 scrolldelay=50>
+                Usando range
+            </marquee>
+        </p>
+        <p style="font-style: Trebuchet MS; font-size: 25px; color: blue;">
+            Informe o valor em centímetros:
+            <input type="range" name="valuey" value="12.4" step="0.2" min="0" max="20">
+        </p>
+        <br><br><br>
+    </form> 
+</body>
+</html>
