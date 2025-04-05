@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exemplo Var, Let e Const</title>
+	</head>
+	<body>
+		<h1>Exemplo de Var, Let e Const em JavaScript</h1>
+
+		<button onclick="executarExemplos()">Executar Exemplos</button>
+
+		<div id="resultado">
+            <p>Os resultados aparecerão aqui.</p>
+        </div>
+		<script>
+			function exemploVar() {
+				var mensagem = "Olá com var!";
+				document.getElementById(
+					"resultado"
+				).innerHTML += `<p style="width: 100px; height:60px; background-color: green">${mensagem}</p>`;
+
+				if (mensagem != "") {
+					var mensagem = "Var é atualizado no mesmo escopo!";
+					document.getElementById(
+						"resultado"
+					).innerHTML += `<p style="width: 100px; height:60px; background-color: green">${mensagem}</p>`;
+				}
+			}
+
+			function exemploConst() {
+				const mensagem = "Olá com const!";
+				document.getElementById(
+					"resultado"
+				).innerHTML += `<p style="width: 100px; height:60px; background-color: green">${mensagem}</p>`;
+
+				if (mensagem != "") {
+					const mensagem = "Const tem escopo de bloco!";
+					document.getElementById(
+						"resultado"
+					).innerHTML += `<p style="width: 100px; height:60px; background-color: red">${mensagem}</p>`;
+				}
+			}
+
+			function exemploLet() {
+				let mensagem = "Olá com let!";
+				document.getElementById(
+					"resultado"
+				).innerHTML += `<p style="width: 100px; height:60px; background-color: green">${mensagem}</p>`;
+
+				if (mensagem != "") {
+					let mensagem = "Let tem escopo de bloco!";
+					document.getElementById(
+						"resultado"
+					).innerHTML += `<p style="width: 100px; height:60px; background-color: red">${mensagem}</p>`;
+				}
+			}
+			function executarExemplos() {
+				document.getElementById("resultado").innerHTML = "";
+				exemploVar();
+				exemploLet();
+				exemploConst();
+			}
+		</script>
+	</body>
+</html>
