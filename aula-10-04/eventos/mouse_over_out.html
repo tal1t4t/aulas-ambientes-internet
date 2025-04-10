@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse over e mouse out</title>
+</head>
+<body>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color: aqua; color: rgb(255, 0, 0);
+        width: 155px; height: 25px;
+        padding: 15px; margin-left: 40%;">
+        passa o mouse em mim
+    </div>
+
+    <script>
+        function mOver(obj){
+            obj.innerHTML = "CUPOM: HY45409D";
+        }
+
+        function mOut(obj){
+            obj.innerHTML = "CUPOM AQUI!!!";
+        }
+    </script>
+</body>
+</html>
