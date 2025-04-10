@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch case</title>
+
+    <script>
+        function acFunc() {
+            var valor = prompt("Digite '123' ou '321' para entrar: ");
+            switch (valor) {
+                case "123":
+                    alert("usuario logado");
+                    break;
+
+                case "321":
+                    alert("usuario logado");
+                    break;
+
+                default:
+                    alert("ERRO!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>ACESSSO: </p>
+
+    <form>
+        <input type="button" onclick="acFunc()" value="Clique aqui!!!">
+        <br><br>
+
+        <input type="button" value="Atualizar" onclick='parent.location="javascript:location.reload()"'>
+    </form>
+</body>
+</html>
