@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>onKeyDown</title>
+</head>
+<body>
+    <form>
+        <p style="text-align: center">E-mail:
+            <input type="email" name="em" onkeydown="ex1()">
+            <!-- O onKeyDown chama uma função quando alguma tecla é pressionada dentro do campo de entrada -->
+        </p>
+
+        <p style="text-align: center; color: blue" id="texto_aqui"></p>
+
+        <p style="text-align: center">
+            E-mail <input type="email" name="em" id="AQUI" style="color: blue;" onkeyup="mudar()">
+            <!-- O onkeyup chama uma função quando liberamos uma tecla no campo de entrada.
+            Nesse caso, quando o usuário solta uma tecla, a letra digitada é convertida para minúscula -->
+        </p>
+    </form>
+
+    <script>
+        function ex1(){
+            document.getElementById("texto_aqui").innerHTML = "Você pressionou uma tecla dentro do campo de entrada!!!"
+        }
+
+        function mudar(){
+            let minl = document.getElementById("AQUI");
+            minl.value = minl.value.toLowerCase();
+        }
+    </script>
+</body>
+</html>

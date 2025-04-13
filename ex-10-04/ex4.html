@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Conversão MOEDA</title>
+        <link rel="icon" type="IMAGE/PNG" href="moeda.png">
+        <script src="jquery-1.8.3.js"></script>
+        <script>
+            setInterval(function(){ // Função para fazer piscar a imagem da palavra NOVIDADES.
+                $(".nov").fadeIn(); // Está dentro de setInterval.
+                $(".nov").fadeOut(); // Está dentro de setInterval.
+            },10); // Fecha setInterval.
+
+            function Ajuste() { // O valor digitado pelo usuário será ajustado no campo texto (VISUALMENTE).
+                // O valor da entrada, digitado pelo usuário, será atribuído para a variável entrada.
+                var ENTRADA = document.getElementById("mudar");
+                // O ajuste do valor digitado (da esquerda para a direita). O ponto "." some, e a vírgula "," vira ponto ".".
+                ENTRADA.value = ENTRADA.value.replace(".", "").replace(",", ".");
+            }
+                
+            // Função apaga os resultados: DOLAR E EURO através de = "", quando se clica no botão "APAGAR".
+            function Ap_TUDO() {
+                document.getElementById("resDOLAR").innerHTML = "";
+                document.getElementById("resEURO").innerHTML = ""; 
+            }
+
+            // Função que tem o código de conversão de moeda e atribuição de cada valor para o seu respectivo "id".
+            function convDE() {
+                let conv_ENTRADA; // Declarado dentro de convDE();
+                let DOLAR; let EURO; // Declarado dentro de convDE();
+                let DOLAR_F; let EURO_F; // Declarado dentro de convDE();
+                let V1_F;
+                // Ajusta inicialmente o valor digitado pelo usuário para análise do if (EX: Digitado: 1.090,80. Ajustado: 1090.80).
+                conv_ENTRADA = document.frm1.v1.value.replace(".", "").replace(",", ".");
+
+                // Avalia se a entrada não estiver vazia, e se for maior que 0 executa o bloco.
+                if ((conv_ENTRADA != "") && (parseFloat(conv_ENTRADA, 10) > 0)) {
+                    
+                    // logo após a linha do if.
+                    V1_F = conv_ENTRADA.replace(",", ".");
+
+                    // parseFloat - Está convertendo para um valor REAL (ponto flutuante).
+                    DOLAR = parseFloat(V1_F, 10) / parseFloat(4.99, 10);
+                    EURO = parseFloat(V1_F, 10) / parseFloat(5.39, 10);
+
+                    // Está substituindo o caracter "." para "," para efeito de exibição (EX: 16,80).
+                    DOLAR_F = DOLAR.toFixed(2).replace(".", ",");
+                    EURO_F = EURO.toFixed(2).replace(".", ","); // A valor contido em EURO_F apresentará duas casas decimais.
+
+                    document.getElementById("resEURO").innerHTML = EURO_F;
+
+                    // O valor que está em DOLAR_F estará no id "resDOLAR".
+                    document.getElementById("resDOLAR").innerHTML = DOLAR_F;
+                } 
+                else { // Senão
+                    
+                    // A primeira "}" fecha o senão e a segunda "}" fecha o if.
+                    alert("ERRO ! CAMPO VAZIO, OU VALOR NEGATIVO, OU IGUAL A ZERO ! "); }  
+            }
+
+            // Função que coloca em FOCO o próximo campo ou botão quando se pressiona a tecla ENTER.
+            function EnterTab(BOTAO, Evento) {
+                if (Evento.keyCode == 13) { // O código chave 13 é referente a tecla ENTER do teclado.
+
+                // Coloca o botão em foco. A primeira "}" fecha o if e a segunda "}" fecha EnterTab().
+                document.getElementById(BOTAO).focus(); } }
+
+        </script>
+    </head>
+
+<body style="text-align: center; background-color: #456677;">
+    <!-- Imagem "NOVIDADES" -->
+    <img class="nov" style="padding: 5px; background-color: rgb(255, 255, 255);" src="B_NOV.jpg">
+
+    <h2 style="font-family: 'Courier New', Courier, monospace;">CONVERSÃO DE REAL PARA DOLAR E EURO</h2>
+
+    <form name="frm1">
+        <p style="font-family: Arial, Helvetica, sans-serif; color: #b6e9dc;">Entre com o valor em REAIS R$:
+            <input type="text" name="v1" id="mudar" size="5" onchange="Ajuste()" onKeyDown="EnterTab('BOTAO',event)"></p>     
+            <!-- onkeydown - Chame uma função quando o usuário pressionar uma tecla.
+                O id "BOTAO" da linha <input type="button" id="BOTAO"... ficará em foco. -->
+
+        <p><input type="button" id="BOTAO" value=" CONVERTER " onClick="convDE()"
+            style="min-width: 180px; max-width: 460px; height: 30px"></p>
+    
+        <p><input type="reset" value="APAGAR" onClick="Ap_TUDO()"
+            style="min-width: 180px; max-width: 460px; height: 30px"></p>
+
+        <!-- Criando a tabela -->
+        <table style="margin:auto; background-color: #cfda73; border: 1px solid black;" width=" 300px">
+            <!-- Crio a linha -->
+            <tr>
+                <td>R E S U L T A D O</td> <!-- Coluna --> 
+            </tr> <!-- Fecho a linha -->
+
+            <tr> 
+                <td style="text-align:left">DOLAR $ :
+                    <span style="color: red; font-weight: bold;" id="resDOLAR"></span> 
+                </td> 
+            </tr>
+
+            <tr> 
+                <td style="text-align:left">EURO € :
+                    <span style="color: red; font-weight: bold;" id="resEURO"></span> 
+                </td> 
+            </tr>
+
+        </table> <!-- Fechando a tabela -->
+
+
+    </form> <!-- Fecho formulário -->
+</body> 
+</html>

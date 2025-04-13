@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+</head>
+<body onload="checkCookies()">
+
+    <script>
+        function checkCookies(){
+            if(navigator.cookieEnabled == true){
+                alert("cookies permitidos");
+            }
+            else{
+                alert("cookies desabilitados");
+            }
+        }
+    </script>
+</body>
+</html>

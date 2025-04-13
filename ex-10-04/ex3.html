@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Bem-vindo</title>
+		<link rel="icon" type="image/png" href="form.png" />
+	</head>
+	<body>
+		<div style="text-align: center">
+			<h1 style="color: rgb(122, 159, 194)">SELECIONE UMA DAS OPÇÕES ABAIXO:</h1>
+			<form>
+				<input type="text" id="blur" onblur="FuncaoBlur()" placeholder="Informe o seu nome"/>
+
+				<br/><br/>
+
+				<select id="opcao" onchange="FuncaoOnChange()">
+					<option value="Desenvolvimento Android">Desenvolvimento em Android</option>
+					<option value="Desenvolvimento Web">Desenvolvimento Web</option>
+					<option value="Programação JAVA">Programação JAVA</option>
+					<option value="Sistema Operacional">Sistema Operacional</option>
+				</select>
+				<br><br>
+
+				<input type="text" name="focus" id="focus" onfocus="FuncaoFocus(this.id)" placeholder="Deixe seu comentário"/>
+
+				<p id="texto_aqui"></p>
+			</form>
+
+			<br><br><br>
+
+			<button onClick="ParaCINZA()">Mudar a cor de fundo da página para "CINZA"</button>
+
+			<br><br>
+
+			<button onClick="ParaBRANCO()">Mudar a cor de fundo da página para "BRANCO"</button>
+
+			<br><br>
+
+			<object type="application/pdf" data="\pdfs\Material%201%20-%20Ambientes%20Internet.pdf" width="500" height="300">
+            </object>
+		</div>
+
+		<script type="text/javascript">
+			function FuncaoFocus(x) {
+				document.getElementById(x).style.background = "YELLOW";
+			}
+
+			function FuncaoBlur() {
+				let x = document.getElementById("blur");
+				x.value = x.value.toUpperCase();
+			}
+
+			function ParaCINZA() {
+				document.body.style.background = "GRAY";
+			}
+			function ParaBRANCO() {
+				document.body.style.background = "WHITE";
+			}
+
+			function FuncaoOnChange() {
+				let x = document.getElementById("opcao").value;
+				document.getElementById("texto_aqui").innerHTML = "Você selecionou: " + x;
+			}
+		</script>
+	</body>
+</html>

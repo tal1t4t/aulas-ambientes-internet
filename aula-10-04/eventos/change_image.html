@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Image</title>
+
+    <style>
+        .beano{
+            width: 200px;
+        }
+    </style>
+
+    <script>
+        function changeImage(a){
+            document.getElementById("img").src = a;
+            // aqui o código pega a imagem que está no parâmetro da funçõa na tag img e joga para a imagem da div main
+        }
+    </script>
+</head>
+<body>
+    <div id="main_img">
+        <img id="img" class="beano" src="bean-caixa.jpg">
+    </div>
+
+    <div id="thumb_img">
+        <img src="numero1.png" onclick="changeImage('bean-caixa.jpg')" style="cursor: pointer;">
+        <img src="numero2.png" onclick="changeImage('bean-com-chapeu.jpeg')" style="cursor: pointer;">        
+    </div>
+</body>
+</html>
