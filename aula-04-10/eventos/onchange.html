@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>On change</title>
+    <script>
+        function FunCH(){
+            var x = document.getElementById("fcid");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    Cidade : <input type="text" id="fcid" onchange="FunCH()">
+    <!-- Quando usamos onchange, a função é chamada quando damos enter na caixa de texto ou clicamos fora dela -->
+</body>
+</html>

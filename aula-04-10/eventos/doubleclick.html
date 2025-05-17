@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click</title>
+</head>
+<body>
+    <h1 id="ponto" ondblclick="Trocar()">Se eu clicar aqui 2 vezes aqui o que vai aparecer?</h1>
+
+    <script>
+        function Trocar(){
+            document.getElementById('ponto').innerHTML = "O que vai acontecer é que vai " + "aparecer este texto que você esta lendo!";
+        }
+    </script>    
+</body>
+</html>
