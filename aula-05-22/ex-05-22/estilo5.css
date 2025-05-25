@@ -1,0 +1,23 @@
+a {text-decoration:none; font-style:italic;}
+
+.formato_data { font-weight :bold; color :blue; font-style:italic;}
+
+.borda_baixorelevo {border-style : inset; }
+
+span.imagem2 {
+    display: inline-block;
+    left:70px; top:400px;
+    width: 200px; height: 200px;
+    background-image: url("f_fig2.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    position:absolute; }
+
+span.imagem3 {
+    display: inline-block;
+    width: 200px; height: 200px;
+    left:1090px; top:400px;
+    background-image: url("f_fig3.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    position:absolute; }

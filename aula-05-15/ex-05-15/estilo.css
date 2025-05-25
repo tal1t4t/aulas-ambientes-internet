@@ -10,7 +10,7 @@
     border-style: dashed;
 }
 
-.span_foto1{
+span.foto1{
     display: inline-block;
     width: 1000px;
     height: 180px;
@@ -19,7 +19,7 @@
     background-position: top left;
 }
 
-.span_foto2{
+span.foto2{
     display: inline-block;
     width: 1000px;
     height: 180px;
