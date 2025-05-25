@@ -1,0 +1,29 @@
+.borda_baixorelevo{
+    border-style: inset;
+}
+
+.texto_negrito{
+    font-weight: bold;
+}
+
+.borda_tracejada{
+    border-style: dashed;
+}
+
+.span_foto1{
+    display: inline-block;
+    width: 1000px;
+    height: 180px;
+    background-image: url("foto1.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.span_foto2{
+    display: inline-block;
+    width: 1000px;
+    height: 180px;
+    background-image: url("foto2.jpg");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
